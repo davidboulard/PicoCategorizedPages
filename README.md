@@ -87,3 +87,8 @@ But don't forget to set your config.php right :
 ```php
     $config['pages_order_by'] = 'position';
 ```
+
+## What's next ?
+
+- Folder ignore
+- Recursive categories
