@@ -6,7 +6,7 @@
  * @author David Boulard
  * @link https://github.com/arckauss/Pico-Categorized-Pages
  * @license http://opensource.org/licenses/MIT
- * @version 0.8
+ * @version 0.9.0
  */
 class Pico_Categorized_Pages {
 
@@ -15,15 +15,15 @@ class Pico_Categorized_Pages {
 	public function before_read_file_meta(&$headers)
 	{
 		$headers['position'] = "Position";
-		$headers['folder_position'] = "Folder_Position";
-		$headers['folder_title'] = "Folder_Title";
+		$headers['category_position'] = "Category_Position";
+		$headers['category_title'] = "Category_Title";
 	}
 	
 	public function get_page_data(&$data, $page_meta)
 	{
 		$data['position'] = isset($page_meta['position']) ? intval($page_meta['position']) : 0;
-		$data['folder_position'] = isset($page_meta['folder_position']) ? intval($page_meta['folder_position']) : 0;
-		$data['folder_title'] = isset($page_meta['folder_title']) ? $page_meta['folder_title'] : "";
+		$data['category_position'] = isset($page_meta['category_position']) ? intval($page_meta['category_position']) : 0;
+		$data['category_title'] = isset($page_meta['category_title']) ? $page_meta['category_title'] : "";
 	}
 	
 	public function get_pages(&$pages, &$current_page, &$prev_page, &$next_page)
@@ -46,10 +46,10 @@ class Pico_Categorized_Pages {
 						$temp_categories[$current_category]["pages"] = array();
 					}
 
-					if( $page['folder_title'] != "" )
+					if( $page['category_title'] != "" )
 					{
-						$temp_categories[$current_category]["title"] = $page['folder_title'];
-						$temp_categories[$current_category]["position"] = $page['folder_position'];
+						$temp_categories[$current_category]["title"] = $page['category_title'];
+						$temp_categories[$current_category]["position"] = $page['category_position'];
 						$temp_categories[$current_category]["pages"][1] = $page;
 					}
 					else
