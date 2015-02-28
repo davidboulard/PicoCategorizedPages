@@ -44,11 +44,11 @@ Index.md for Bees :
     /*
     Title: Welcome to the bees !
     Position: 1
-    Folder_Position: 2
-    Folder_Title: Beez ?!
+    Category_Position: 2
+    Category_Title: Beez ?!
     */
     
-Will create a category at the second position (Folder_Position) with the title "Beez ?!" (Folder_Title) and the page itself will be titled "Welcome to the bees" and will be te first item in the list.
+Will create a category at the second position (Category_Position) with the title "Beez ?!" (Category_Title) and the page itself will be titled "Welcome to the bees" and will be te first item in the list.
 
 The same applies for hive.md :
 
