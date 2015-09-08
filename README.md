@@ -1,5 +1,5 @@
 # Pico-Categorized-Pages
-A little [Pico-CMS](http://picocms.org/) plugin allowing you to automatically sort, position and categorize your page from your content folder.
+A little [Pico-CMS](http://picocms.org/) plugin allowing you to automatically sort (ascending or descending), position and categorize your page from your content folder.
 
 ## General Purpose
 
@@ -23,6 +23,13 @@ The purpose here is to be able to generate a navigation menu simply by writing t
   	</nav>
 ```
 ## How-to
+
+First, be sure to configure it properly
+```php
+    $config['pages_order_by'] = 'position'; // Set the pages order by position
+    $config['pages'] = 'asc';               // ascending sort by default, can be 'desc'
+```
+
 A category is simply a folder inside your content folder.
 The description of the folder is declared in the index.md of that folder. It is where the position in the menu and its title will be set.
 The same logic applies to each file inside that folder, except they won't have any impact on the folder declaration.
@@ -83,10 +90,7 @@ Will output :
 
 ## Installation
 Simply put pico_categorized_pages.php in your plugins folder and it will be fine as it is.
-But don't forget to set your config.php right :
-```php
-    $config['pages_order_by'] = 'position';
-```
+But don't forget to set your config.php right as mentioned in the How-To.
 
 ## What's next ?
 

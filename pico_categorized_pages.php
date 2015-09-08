@@ -6,18 +6,20 @@
  * @author David Boulard
  * @link https://github.com/arckauss/Pico-Categorized-Pages
  * @license http://opensource.org/licenses/MIT
- * @version 0.9.1
+ * @version 0.9.2
  */
 class Pico_Categorized_Pages {
 
 	public $categories = array();
 	private $base_url;
 	private $pages_order_by;
+	private $pages_order;
 
 	public function config_loaded(&$settings)
 	{
 		$this->base_url = $settings['base_url'];
 		$this->pages_order_by = $settings['pages_order_by'];
+		$this->pages_order = $settings['pages_order'];
 	}
 	
 	public function before_read_file_meta(&$headers)
@@ -74,7 +76,10 @@ class Pico_Categorized_Pages {
 			{
 				if( isset($current_category['position']) )
 				{
-					ksort($current_category['pages']);
+					if( $this->pages_order == 'desc' )
+						krsort($current_category['pages']);
+					else
+						ksort($current_category['pages']);
 					$this->categories[$current_category['position']] = $current_category;
 				}
 			}
