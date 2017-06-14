@@ -61,6 +61,7 @@ class PicoCategorizedPages extends AbstractPicoPlugin
                         if(!$page['meta']['page_ignore']) {
                             $temp_categories[$current_category]['pages'][1]['title'] = $page['title'];
                             $temp_categories[$current_category]['pages'][1]['url'] = $page['url'];
+                            $temp_categories[$current_category]['pages'][1]['id'] = $page['id'];
                         }
                 }
             }
@@ -75,6 +76,7 @@ class PicoCategorizedPages extends AbstractPicoPlugin
                     && !$page['meta']['page_ignore']) {
                         $temp_categories[$current_category]['pages'][$page['meta']['position']]['title'] = $page['title'];
                         $temp_categories[$current_category]['pages'][$page['meta']['position']]['url'] = $page['url'];
+                        $temp_categories[$current_category]['pages'][$page['meta']['position']]['id'] = $page['id'];
                     }
             }
 
